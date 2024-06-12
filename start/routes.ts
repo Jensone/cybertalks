@@ -16,7 +16,10 @@ const EventsController = () => import('#controllers/events_controller')
 router.on('/').render('pages/index').as('homepage')
 
 // Routes des événements
-router.get('/events', [EventsController, 'allEvents']).as('events')
+router.get('/events', [EventsController, 'all']).as('events')
+
+// Routes pour afficher un événement
+router.get('/event/:id', [EventsController, 'show']).as('event')
 
 // Route de la page de contact
 router.on('/contact').render('pages/contact').as('contact')

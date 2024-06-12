@@ -34,4 +34,7 @@ export default class Event extends BaseModel {
 
   @column()
   declare online: boolean
+
+  @column()
+  declare userId: number
 }

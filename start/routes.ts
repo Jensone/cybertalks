@@ -7,13 +7,16 @@
 |
 */
 
-import router from '@adonisjs/core/services/router'
+import router from '@adonisjs/core/services/router' // Routeur de Adonis
 
-router.on('/').render('pages/home')
-router.on('/posts').render('pages/posts')
-router.on('/contact').render('pages/contact')
-router.on('/support').render('pages/support')
+// Importation des controllers
+const EventsController = () => import('#controllers/events_controller')
 
-router.post('/posts/:id', ({ params }) => {
-  return `This is post with id ${params.id}`
-})
+// Route de la page d'accueil
+router.on('/').render('pages/index').as('homepage')
+
+// Routes des événements
+router.get('/events', [EventsController, 'allEvents']).as('events')
+
+// Route de la page de contact
+router.on('/contact').render('pages/contact').as('contact')

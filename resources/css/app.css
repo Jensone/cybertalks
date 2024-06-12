@@ -2,14 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply max-w-3xl px-5 py-8 mx-auto;
+html {
+  @apply bg-slate-100 text-slate-900;
+}
+
+main {
+  @apply flex flex-col items-center max-w-3xl gap-8 px-5 py-8 mx-auto bg-white rounded-lg shadow-lg;
 }
 
 h1 {
   @apply text-4xl font-bold;
 }
 
+header {
+  @apply flex flex-col items-center justify-between mb-10 border-b;
+}
+
 nav {
   @apply flex items-center gap-3 my-4;
+}
+
+nav a:hover {
+  @apply text-blue-800 transition-all ease-in-out;
 }

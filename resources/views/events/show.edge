@@ -1,0 +1,8 @@
+@layout.base({
+  title: event.title,
+  description: truncate(event.description, 160),
+})
+
+{{ inspect(event) }}
+
+@end

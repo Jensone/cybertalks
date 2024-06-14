@@ -3,6 +3,13 @@
   "description": "Discover all events in your area or online",
 })
 
+
+@flashMessage('notification')
+  <div class="notification {{ $message.type }}">
+    {{ $message.message }}
+  </div>
+@end
+
 <h1>Our events</h1>
 <p>Discover all events in your area or online</p>
 <section class="flex flex-wrap justify-center mx-auto">

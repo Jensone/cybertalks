@@ -34,11 +34,11 @@
             "Area 51"
           @end
         </span>
-        <span class="flex items-center block px-3 py-2 text-xs font-bold leading-none {{
+        <a href="{{ route('event', { id: item.id }) }}" class="flex items-center block px-3 py-2 text-xs font-bold leading-none {{
           item.online ? "text-indigo-500" : "text-red-500"
-        }} bg-white rounded-full">CHECK IT
-          {{-- {{ (item.createdAt) }} --}}
-        </span>
+        }} bg-white rounded-full">
+        CHECK IT
+        </a>
       </div>
     </div>
   </div>

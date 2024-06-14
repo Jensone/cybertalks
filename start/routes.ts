@@ -8,7 +8,6 @@
 */
 
 import router from '@adonisjs/core/services/router' // Routeur de Adonis
-import { request } from 'http'
 
 // Importation des controllers
 const EventsController = () => import('#controllers/events_controller')

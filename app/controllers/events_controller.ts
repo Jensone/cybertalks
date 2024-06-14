@@ -1,5 +1,6 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import Event from '#models/event'
+import User from '#models/user'
 
 export default class EventsController {
   // Méthode pour afficher tous les événements
@@ -20,9 +21,17 @@ export default class EventsController {
   async show({ request, view }: HttpContext) {
     // Récupération de l'événement par son ID passé en paramètre
     const event = await Event.find(request.param('id'))
+    const organizer = await User.findBy('id', event?.userId)
 
     return view.render('events/show', {
-      "event": event
-    })
+      "event": event,
+      "organizer": organizer
+      })
   }
+
+  async create({ request }: HttpContext) {
+    const data = request.toJSON().body
+    return data
+  }
+
 }

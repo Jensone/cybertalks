@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title || "Cyber & Tech Meetings" }} • Cybertalks</title>
-  <meta
-  name="description"
-  content="{{
-    description || "Cybertalks is a platform for organise meetings about Cybersecurity and tech."
-  }}"
-    >
+  <meta name="description" content="{{
+    description || " Cybertalks is a platform for organise meetings about Cybersecurity and tech."
+  }}">
+
+  @if($slots.leaflet)
+    {{{ await $slots.leaflet() }}}
+  @endif
 
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

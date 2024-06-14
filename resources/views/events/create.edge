@@ -1,0 +1,29 @@
+@layout.base({
+  title: "Create a new event",
+  description: "Create a new event on the Cybertalks platform and share it with the world.",
+})
+
+@let(offline = asset('resources/assets/offline.png'))
+@let(online = asset('resources/assets/online.png'))
+
+<section>
+  <form action="{{ route('store') }}" method="post" class="flex flex-col gap-3 my-10">
+    <input type="text" name="title" placeholder="Title of the event" id="" class="border border-slate-300" required>
+    <textarea name="description" placeholder="Add a description" id="" class="border border-slate-300" cols="30" rows="10"></textarea>
+    <label for="startAt">The event start at</label>
+    <input type="datetime-local" name="startAt" placeholder="startAt" id="startAt" class="border border-slate-300" required>
+    <label for="endAt">The event end at</label>
+    <input type="datetime-local" name="endAt" placeholder="endAt" id="endAt" class="border border-slate-300" required>
+    <label for="online">Is an online event?</label>
+    <input type="checkbox" name="online" id="online" class="border border-slate-300">
+    <input type="text" name="address" placeholder="address" id="" class="border border-slate-300">
+    <input type="text" name="city" placeholder="city" id="" class="border border-slate-300">
+    <select name="country" placeholder="country" id="" class="border border-slate-300">
+      <option value="France">France</option>
+    </select>
+    <button type="submit">Save</button>
+  </form>
+</section>
+
+
+@end
